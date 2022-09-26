@@ -32,13 +32,14 @@ export class AlunoComponent implements OnInit {
     { attribute: 'name', name: 'Nome', value: (element: Aluno) => `${element.name}` },
     { attribute: 'email', name: 'Email', value: (element: Aluno) => `${element.email}` },
     { attribute: 'age', name: 'Idade', value: (element: Aluno) => `${element.age}` },
-    { attribute: 'note1', name: 'Nota1', value: (element: Aluno) => `${element.note1}` },
-    { attribute: 'note2', name: 'Nota2', value: (element: Aluno) => `${element.note2}` },
+    { attribute: 'nota1', name: 'Nota1', value: (element: Aluno) => `${element.nota1}` },
+    { attribute: 'nota2', name: 'Nota2', value: (element: Aluno) => `${element.nota2}` },
     { attribute: 'average', name: 'Média', value: (element: Aluno) => `${element.average}` },
     { attribute: 'status', name: 'Situação', value: (element: Aluno) => `${element.status}` },
   ];
 
   displayedColumns = this.columns.map(Aluno => Aluno.attribute);
+  
   dataSource = new MatTableDataSource(alunosList);
 
   applyFilter(event: Event) {

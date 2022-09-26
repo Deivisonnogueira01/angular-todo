@@ -4,19 +4,23 @@ export class Aluno {
   public name: string;
   public email: string;
   public age: number;
-  public note1: number;
-  public note2: number;
+  public nota1: number;
+  public nota2: number;
+
+
   public average: number;
   public status: string;
 
-  constructor(id: number, name: string, age: number, note1: number, note2: number) {
+  constructor(id: number, name: string, age: number, nota1: number, nota2: number) {
     this.id = id;
     this.name = name;
-    this.email = name.toLowerCase() + age + '@gmail.com';
+    this.email = name.toLowerCase() + age + '@ifms.edu.br';
     this.age = age;
-    this.note1 = note1;
-    this.note2 = note2;
-    this.average = (note1 + note2) / 2;
-    this.status = this.average >= 6 ? 'approved' : 'disapproved'
+    this.nota1 = nota1;
+    this.nota2 = nota2;
+
+    this.average = (nota1 + nota2) / 2;
+
+    this.status = this.average >= 6 ? 'Aprovado' : 'Reprovado'
   }
 }
