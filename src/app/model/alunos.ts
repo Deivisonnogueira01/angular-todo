@@ -4,11 +4,12 @@ export class Aluno {
   public name: string;
   public email: string;
   public age: number;
+  
   public nota1: number;
   public nota2: number;
 
 
-  public average: number;
+  public media: number;
   public status: string;
 
   constructor(id: number, name: string, age: number, nota1: number, nota2: number) {
@@ -19,8 +20,8 @@ export class Aluno {
     this.nota1 = nota1;
     this.nota2 = nota2;
 
-    this.average = (nota1 + nota2) / 2;
+    this.media = (nota1 + nota2) / 2;
 
-    this.status = this.average >= 6 ? 'Aprovado' : 'Reprovado'
+    this.status = this.media >= 6 ? 'Aprovado' : 'Reprovado'
   }
 }
