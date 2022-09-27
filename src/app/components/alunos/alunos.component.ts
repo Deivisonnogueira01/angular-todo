@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Aluno } from "../../model/alunos";
 import { MatTableDataSource } from "@angular/material/table";
+import { AlunoService } from "./aluno.service";
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 
 const alunosList: Aluno[] = [
   new Aluno(1, "Deivison", 20, 7, 9.7),
@@ -22,10 +24,15 @@ const alunosList: Aluno[] = [
 })
 export class AlunoComponent implements OnInit {
 
-   public formMessage!:string;
 
 
-  constructor() {
+
+  constructor(
+   private alunoService : AlunoService,
+   public matDialog : MatDialog
+  ) {
+
+   
 
   }
 
@@ -79,11 +86,11 @@ export class AlunoComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  addAluno(alunonew : Aluno ): void{
+ /* addAluno(alunonew : Aluno ): void{
 
   this.formMessage = "Aluno inserido Com Sucesso"
   
-  }
+  }*/
 
   removeAluno() {}
 
