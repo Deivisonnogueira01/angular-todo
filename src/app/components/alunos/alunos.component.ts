@@ -21,7 +21,13 @@ const alunosList: Aluno[] = [
   styleUrls: ["./alunos.component.css"],
 })
 export class AlunoComponent implements OnInit {
-  constructor() {}
+
+   public formMessage!:string;
+
+
+  constructor() {
+
+  }
 
   columns = [
     { attribute: "id", name: "ID", value: (element: Aluno) => `${element.id}` },
@@ -73,9 +79,16 @@ export class AlunoComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  addAluno() {}
+  addAluno(alunonew : Aluno ) {
+
+    
+  return this.formMessage = "Aluno inserido Com Sucesso"
+  
+  }
 
   removeAluno() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 }
