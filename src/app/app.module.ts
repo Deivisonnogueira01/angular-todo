@@ -17,7 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatDialogModule} from '@angular/material/dialog';
 ;
 
  // 12
@@ -43,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     MatCardModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
 
   ],
 

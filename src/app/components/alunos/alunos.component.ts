@@ -79,10 +79,9 @@ export class AlunoComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  addAluno(alunonew : Aluno ) {
+  addAluno(alunonew : Aluno ): void{
 
-    
-  return this.formMessage = "Aluno inserido Com Sucesso"
+  this.formMessage = "Aluno inserido Com Sucesso"
   
   }
 
