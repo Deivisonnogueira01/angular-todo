@@ -1,9 +1,12 @@
+import { MatButtonModule } from '@angular/material/button';
 import { Component, OnInit } from "@angular/core";
 import { Aluno } from "../../model/alunos";
 import { MatTableDataSource } from "@angular/material/table";
 import { AlunoService } from "./aluno.service";
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
+
+/*
 const alunosList: Aluno[] = [
   new Aluno(1, "Deivison", 20, 7, 9.7),
   new Aluno(2, "Kaique", 26, 7.8, 9.5),
@@ -15,7 +18,7 @@ const alunosList: Aluno[] = [
   new Aluno(8, "Zaqueu", 21, 7, 7.5),
   new Aluno(9, "Saulo", 28, 7, 7.5),
   new Aluno(10, "Jamas", 26, 9, 9.5),
-];
+];*/
 
 @Component({
   selector: "app-alunos",
@@ -24,16 +27,24 @@ const alunosList: Aluno[] = [
 })
 export class AlunoComponent implements OnInit {
 
+  aluno: Aluno;
 
 
-
+   alunoTeste: any;
+   
   constructor(
-   private alunoService : AlunoService,
-   public matDialog : MatDialog
+    public alunoService: AlunoService,
+    public matDialog: MatDialog,
+
   ) {
 
-   
+  }
 
+  alunos: Aluno[] = [];
+
+
+  getAlunos(): void {
+    this.alunos = this.alunoService.GetAllAlunos();
   }
 
   columns = [
@@ -77,24 +88,28 @@ export class AlunoComponent implements OnInit {
     },
   ];
 
+
   displayedColumns = this.columns.map((Aluno) => Aluno.attribute);
 
-  dataSource = new MatTableDataSource(alunosList);
+  dataSource = new MatTableDataSource(this.alunos);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
- /* addAluno(alunonew : Aluno ): void{
 
-  this.formMessage = "Aluno inserido Com Sucesso"
-  
-  }*/
+  addAluno(alunonew: Aluno): void {
 
-  removeAluno() {}
+    this.alunoService.CreateAluno(alunonew);
+  }
+
+
+  removeAluno() { }
 
   ngOnInit(): void {
+    this.getAlunos();
 
+  
   }
 }

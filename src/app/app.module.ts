@@ -18,7 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
-;
+import {MatButtonModule} from '@angular/material/button';
+
 
  // 12
 
@@ -44,7 +45,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatCardModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
 
   ],
 

@@ -1,9 +1,21 @@
+import { Injectable } from '@angular/core';
 import { Aluno } from './../../model/alunos';
 
-
+@Injectable({
+  providedIn: 'root',
+})
 
 export class AlunoService {
+
+
+
+  constructor(){
+
+  }
+
+
     private DATABASE: Aluno[] = [
+
       new Aluno(1, "Deivison", 20, 7, 9.7),
       new Aluno(2, "Kaique", 26, 7.8, 9.5),
       new Aluno(3, "Nobru", 20, 8, 8),
@@ -13,13 +25,13 @@ export class AlunoService {
       new Aluno(7, "Luis", 20, 6.5, 6),
       new Aluno(8, "Zaqueu", 21, 7, 7.5),
       new Aluno(9, "Saulo", 28, 7, 7.5),
-      new Aluno(10, "Jamas", 26, 9, 9.5),
+      new Aluno(10, "Jamas", 26, 9, 9.5)
+
     ]
 
 
     public GetAllAlunos(): Aluno[] {
 
-        console.log(this.DATABASE);
         return this.DATABASE;
 
     }
