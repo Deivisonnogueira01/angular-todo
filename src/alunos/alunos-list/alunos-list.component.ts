@@ -33,8 +33,12 @@ export class AlunoListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-
   }
+
+  alunos: Aluno[] = [];
+
+
+  
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -42,6 +46,7 @@ export class AlunoListComponent implements OnInit {
     this.dataSource.paginator = this.paginator
   }
 }
+
 
   
    
@@ -87,9 +92,10 @@ export class AlunoListComponent implements OnInit {
     },
   ];
 
+
   displayedColumns = this.columns.map((Aluno) => Aluno.attribute);
 
-  dataSource = new MatTableDataSource(alunosList);
+  dataSource = new MatTableDataSource(this.alunos);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
