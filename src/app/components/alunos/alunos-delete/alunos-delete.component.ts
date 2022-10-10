@@ -2,9 +2,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Aluno } from 'src/app/model/alunos';
 import { AlunosService } from 'src/app/services/alunos.service';
 
-import { Aluno } from './../../app/model/alunos';
+
 
 @Component({
   selector: 'app-alunos-delete',

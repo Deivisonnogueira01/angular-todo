@@ -8,8 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AlunoListComponent } from './../alunos/alunos-list/alunos-list.component';
-import { AlunoUpdateComponent } from './../alunos/alunos-update/alunos-update.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -19,11 +18,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ToastrModule } from 'ngx-toastr';
-import { AlunosCreateComponent } from 'src/alunos/alunos-create/alunos-create.component';
-import { AlunoDeleteComponent } from 'src/alunos/alunos-delete/alunos-delete.component';
+
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
+import { AlunoListComponent } from './components/alunos/alunos-list/alunos-list.component';
+import { AlunosCreateComponent } from './components/alunos/alunos-create/alunos-create.component';
+import { AlunoDeleteComponent } from './components/alunos/alunos-delete/alunos-delete.component';
+import { AlunoUpdateComponent } from './components/alunos/alunos-update/alunos-update.component';
 
 
  // 12
