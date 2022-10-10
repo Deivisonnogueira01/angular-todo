@@ -1,18 +1,16 @@
-export class Aluno {
+export interface Aluno {
+  id: number;
+  name: string;
+  email: string;
+  age: number;
 
-  public id: number;
-  public name: string;
-  public email: string;
-  public age: number;
-  
-  public nota1: number;
-  public nota2: number;
+  nota1: number;
+  nota2: number;
 
+  media: number;
+  status: string;
 
-  public media: number;
-  public status: string;
-
-  constructor(id: number, name: string, age: number, nota1: number, nota2: number) {
+  /*constructor(id: number, name: string, age: number, nota1: number, nota2: number) {
     this.id = id;
     this.name = name;
     this.email = name.toLowerCase() + age + '@ifms.edu.br';
@@ -23,5 +21,5 @@ export class Aluno {
     this.media = (nota1 + nota2) / 2;
 
     this.status = this.media >= 6 ? 'Aprovado' : 'Reprovado'
-  }
+  }*/
 }

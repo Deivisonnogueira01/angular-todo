@@ -1,42 +1,52 @@
-import { Component, OnInit } from "@angular/core";
-import { Aluno } from "../../model/alunos";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from "@angular/material/table";
-import { AlunoService } from "./aluno.service";
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { Aluno } from "../../app/model/alunos";
 
-const alunosList: Aluno[] = [
-  new Aluno(1, "Deivison", 20, 7, 9.7),
-  new Aluno(2, "Kaique", 26, 7.8, 9.5),
-  new Aluno(3, "Nobru", 20, 8, 8),
-  new Aluno(4, "Robson", 22, 9, 3.5),
-  new Aluno(5, "Isaque", 15, 10, 9),
-  new Aluno(6, "Jeferson", 20, 9, 9),
-  new Aluno(7, "Luis", 20, 6.5, 6),
-  new Aluno(8, "Zaqueu", 21, 7, 7.5),
-  new Aluno(9, "Saulo", 28, 7, 7.5),
-  new Aluno(10, "Jamas", 26, 9, 9.5),
-];
 
 @Component({
   selector: "app-alunos",
-  templateUrl: "./alunos.component.html",
-  styleUrls: ["./alunos.component.css"],
+  templateUrl: "./alunos-list.component.html",
+  styleUrls: ["./alunos-list.component.css"],
 })
-export class AlunoComponent implements OnInit {
+export class AlunoListComponent implements OnInit {
 
-
-
-
-  constructor(
-   private alunoService : AlunoService,
-   public matDialog : MatDialog
-  ) {
-
+ 
+  ELEMENT_DATA: Aluno[] = [
+    {
+      id: 1,
+      name: 'deivison',
+      email: '@teste',
+      age: 15,
+      nota1: 10,
+      nota2: 2,
+      media: 15,
+      status: 'aprovado'
+    }
    
+  ];
+
+  displayedColumns: string[] = ['id', 'name', 'email', 'age','nota1','nota2', 'media', 'situacao'];
+  dataSource = new MatTableDataSource<Aluno>(this.ELEMENT_DATA);
+
+
+  constructor() {}
+
+  ngOnInit(): void {
 
   }
 
-  columns = [
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  ngAfterViewInit(){
+    this.dataSource.paginator = this.paginator
+  }
+}
+
+  
+   
+
+/*  columns = [
     { attribute: "id", name: "ID", value: (element: Aluno) => `${element.id}` },
     {
       attribute: "name",
@@ -85,16 +95,9 @@ export class AlunoComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+*/
 
- /* addAluno(alunonew : Aluno ): void{
 
-  this.formMessage = "Aluno inserido Com Sucesso"
-  
-  }*/
 
-  removeAluno() {}
+ 
 
-  ngOnInit(): void {
-
-  }
-}
