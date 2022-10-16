@@ -4,6 +4,7 @@ export interface Aluno {
   email: string;
   age: number;
 
+  
   nota1: number;
   nota2: number;
 

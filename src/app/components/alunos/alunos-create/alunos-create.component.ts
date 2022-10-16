@@ -12,6 +12,7 @@ import { AlunosService } from "src/app/services/alunos.service";
   styleUrls: ["./alunos-create.component.css"],
 })
 export class AlunosCreateComponent implements OnInit {
+  
   alunos: Aluno = {
     id: null,
     name: "",
