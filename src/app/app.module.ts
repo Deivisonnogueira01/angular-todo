@@ -28,8 +28,6 @@ import { AlunoDeleteComponent } from './components/alunos/alunos-delete/alunos-d
 import { AlunoUpdateComponent } from './components/alunos/alunos-update/alunos-update.component';
 
 
- // 12
-
 @NgModule({
   declarations: [
     AppComponent,
