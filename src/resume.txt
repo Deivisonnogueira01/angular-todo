@@ -1,0 +1,3 @@
+duas formas para que evite repetições 
+
+criando constantes e modularizando.
