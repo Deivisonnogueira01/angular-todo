@@ -1,3 +1,19 @@
 duas formas para que evite repetições 
 
 criando constantes e modularizando.
+
+
+//18/10
+
+@input()
+serve para passar informacoes de um componente
+para um componente 
+
+selectHero(Hero : hero): void {
+    this.selectHero = hero;
+
+    <EventEmitter>
+    output()
+    classe filha, dispara um evento para a classe pai(componente)
+    
+}
