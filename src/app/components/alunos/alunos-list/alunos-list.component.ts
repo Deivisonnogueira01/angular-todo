@@ -39,6 +39,8 @@ export class AlunoListComponent implements OnInit {
   alunos: Aluno[] = [];
 
 
+  // funcao of() faz parte de rxjs
+  // implementa o componente 
   
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

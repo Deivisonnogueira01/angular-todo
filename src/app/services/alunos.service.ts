@@ -12,22 +12,22 @@ export class AlunosService {
   constructor(private http: HttpClient) { }
 
   findById(id: any): Observable<Aluno> {
-    return this.http.get<Aluno>(`${API_CONFIG.baseUrl}/alunos/${id}`);
+    return this.http.get<Aluno>(`${API_CONFIG.baseUrl}/aluno/${id}`);
   }
 
   findAll(): Observable<Aluno[]> {
-    return this.http.get<Aluno[]>(`${API_CONFIG.baseUrl}/alunos`);
+    return this.http.get<Aluno[]>(`${API_CONFIG.baseUrl}/aluno`);
   }
 
   create(alunos: Aluno): Observable<Aluno> {
-    return this.http.post<Aluno>(`${API_CONFIG.baseUrl}/alunos`, alunos);
+    return this.http.post<Aluno>(`${API_CONFIG.baseUrl}/aluno`, alunos);
   }
 
   update(alunos: Aluno): Observable<Aluno> {
-    return this.http.put<Aluno>(`${API_CONFIG.baseUrl}/alunos/${alunos.id}`, alunos);
+    return this.http.put<Aluno>(`${API_CONFIG.baseUrl}/aluno/${alunos.id}`, alunos);
   }
 
   delete(id: any): Observable<Aluno> {
-    return this.http.delete<Aluno>(`${API_CONFIG.baseUrl}/alunos/${id}`);
+    return this.http.delete<Aluno>(`${API_CONFIG.baseUrl}/aluno/${id}`);
   }
 }
