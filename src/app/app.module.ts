@@ -41,6 +41,7 @@ import { AlunoUpdateComponent } from './components/alunos/alunos-update/alunos-u
     AlunosCreateComponent,
     AlunoDeleteComponent,
     AlunoUpdateComponent
+    
    
 
   ],
