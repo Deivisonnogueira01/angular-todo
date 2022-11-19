@@ -1,3 +1,4 @@
+import { TaskCreateComponent } from './components/task/tasks-create/task-create.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -22,10 +23,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
-import { AlunoListComponent } from './components/alunos/alunos-list/alunos-list.component';
-import { AlunosCreateComponent } from './components/alunos/alunos-create/alunos-create.component';
-import { AlunoDeleteComponent } from './components/alunos/alunos-delete/alunos-delete.component';
-import { AlunoUpdateComponent } from './components/alunos/alunos-update/alunos-update.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 
 
 @NgModule({
@@ -35,11 +36,11 @@ import { AlunoUpdateComponent } from './components/alunos/alunos-update/alunos-u
     HomeComponent,
     HeaderComponent,
     LoginComponent,
-    AlunoListComponent,
-    AlunosCreateComponent,
-    AlunoDeleteComponent,
-    AlunoUpdateComponent
-    
+    UserListComponent,
+    UserCreateComponent,
+    UserDeleteComponent,
+    UserUpdateComponent,
+      
    
 
   ],

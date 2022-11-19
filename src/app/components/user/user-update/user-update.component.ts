@@ -2,29 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Aluno } from 'src/app/model/alunos';
-import { AlunosService } from 'src/app/services/alunos.service';
+import { UserService } from 'src/app/services/user.service';
+import { User } from './../../../model/user';
 
 
 @Component({
-  selector: 'app-alunos-update',
-  templateUrl: './alunos-update.component.html',
-  styleUrls: ['./alunos-update.component.css']
+  selector: 'app-user-update',
+  templateUrl: './user-update.component.html',
+  styleUrls: ['./user-update.component.css']
 })
-export class AlunoUpdateComponent implements OnInit {
+export class UserUpdateComponent implements OnInit {
 
-  alunos: Aluno = {
+  user: User = {
     id: null,
-    name: "",
+    nome: "",
     email: "",
-    age: null,
-    nota1: null,
-    nota2: null,
-    media: null,
-    status: "",
+    password: null,
+    status: false,
+    confirmationToken: null,
+    salt: null,
+   
   }
 
-  name: FormControl = new FormControl(null, Validators.minLength(3));
+  nome: FormControl = new FormControl(null, Validators.minLength(3));
   email: FormControl = new FormControl(null, Validators.email);
   age: FormControl = new FormControl(null, Validators.maxLength(2));
   nota1: FormControl = new FormControl(null, Validators.maxLength(2));
@@ -33,28 +33,28 @@ export class AlunoUpdateComponent implements OnInit {
   status: FormControl = new FormControl(null, null);
 
   constructor(
-    private service: AlunosService,
+    private service: UserService,
     private toast:    ToastrService,
     private router:          Router,
     private route:   ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
-   // this.alunos.id = this.route.snapshot.paramMap.get('id');
+   // this.user.id = this.route.snapshot.paramMap.get('id');
     this.findById();
    }
 
   findById(): void {
-    this.service.findById(this.alunos.id).subscribe(resposta => {
+    this.service.findById(this.user.id).subscribe(resposta => {
       
-      this.alunos = resposta;
+      this.user = resposta;
     })
   }
 
   update(): void {
-    this.service.update(this.alunos).subscribe(() => {
+    this.service.update(this.user).subscribe(() => {
       this.toast.success('Aluno atualizado com sucesso', 'Update');
-      this.router.navigate(['alunos'])
+      this.router.navigate(['user'])
     }, ex => {
       if(ex.error.errors) {
         ex.error.errors.forEach(element => {
@@ -67,6 +67,6 @@ export class AlunoUpdateComponent implements OnInit {
   }
 
   validaCampos(): boolean {
-    return this.name.valid && this.email.valid 
+    return this.nome.valid && this.email.valid 
   }
 }

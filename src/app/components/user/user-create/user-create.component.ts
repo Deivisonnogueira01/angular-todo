@@ -2,18 +2,19 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { Aluno } from "src/app/model/alunos";
-import { AlunosService } from "src/app/services/alunos.service";
+import { User } from "src/app/model/user";
+import { UserService } from "src/app/services/user.service";
 
 
 @Component({
-  selector: "app-alunos-create",
-  templateUrl: "./alunos-create.component.html",
-  styleUrls: ["./alunos-create.component.css"],
+  selector: "app-user-create",
+  templateUrl: "./user-create.component.html",
+  styleUrls: ["./user-create.component.css"],
 })
-export class AlunosCreateComponent implements OnInit {
+export class UserCreateComponent implements OnInit {
   
-  alunos: Aluno = {
+  /*
+  user: User = {
     id: null,
     name: "",
     email: "",
@@ -21,8 +22,8 @@ export class AlunosCreateComponent implements OnInit {
     nota1: null,
     nota2: null,
     media: null,
-    status: "",
-  };
+   
+  };*/
 
   name: FormControl = new FormControl(null, Validators.minLength(3));
   email: FormControl = new FormControl(null, Validators.email);
@@ -33,18 +34,20 @@ export class AlunosCreateComponent implements OnInit {
   status: FormControl = new FormControl(null, null);
 
   constructor(
-    private service: AlunosService,
+    private service: UserService,
     private toast: ToastrService,
     private router: Router
   ) {}
 
+  user: User;
+
   ngOnInit(): void {}
 
   create(): void {
-    this.service.create(this.alunos).subscribe(
+    this.service.create(this.user).subscribe(
       () => {
         this.toast.success("Aluno cadastrado com sucesso", "Cadastro");
-        this.router.navigate(["alunos"]);
+        this.router.navigate(["user"]);
       },
       (ex) => {
         if (ex.error.errors) {

@@ -1,53 +1,56 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from "@angular/material/table";
-import { Aluno } from "src/app/model/alunos";
+import { User } from "src/app/model/user";
 
 
 
 @Component({
-  selector: "app-alunos",
-  templateUrl: "./alunos-list.component.html",
-  styleUrls: ["./alunos-list.component.css"],
+  selector: "app-user",
+  templateUrl: "./user-list.component.html",
+  styleUrls: ["./user-list.component.css"],
 })
-export class AlunoListComponent implements OnInit {
+export class UserListComponent implements OnInit {
 
- 
-  ELEMENT_DATA: Aluno[] = [
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+
+ /*
+  ELEMENT_DATA: User[] = [
     {
       id: 1,
-      name: 'deivison',
+      nome: 'deivison',
       email: '@teste',
       age: 15,
       nota1: 10,
       nota2: 2,
       media: 15,
-      status: 'aprovado'
+      status: true
     }
    
-  ];
+  ];*/
 
-  displayedColumns: string[] = ['id', 'name', 'email', 'age','nota1','nota2', 'media', 'situacao'];
-  dataSource = new MatTableDataSource<Aluno>(this.ELEMENT_DATA);
-
+//  displayedColumns: string[] = ['id', 'name', 'email', 'age','nota1','nota2', 'media', 'situacao'];
+ // dataSource = new MatTableDataSource<User>(this.ELEMENT_DATA);
 
   constructor() {}
 
   ngOnInit(): void {
   }
 
-  alunos: Aluno[] = [];
+  ngAfterViewInit(){
+    // this.dataSource.paginator = this.paginator
+   }
+
+  user: User[] = [];
 
 
   // funcao of() faz parte de rxjs
   // implementa o componente 
   
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+ 
 
-  ngAfterViewInit(){
-    this.dataSource.paginator = this.paginator
-  }
 }
 
 
@@ -98,7 +101,7 @@ export class AlunoListComponent implements OnInit {
 
   displayedColumns = this.columns.map((Aluno) => Aluno.attribute);
 
-  dataSource = new MatTableDataSource(this.alunos);
+  dataSource = new MatTableDataSource(this.user);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

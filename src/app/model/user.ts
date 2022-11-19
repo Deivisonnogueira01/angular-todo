@@ -1,15 +1,23 @@
-export interface Aluno {
+export interface User {
+
   id: number;
-  name: string;
+
+  nome: string;
+
   email: string;
-  age: number;
 
-  
-  nota1: number;
-  nota2: number;
+  password: number;
 
-  media: number;
-  status: string;
+  status: boolean;
+
+  confirmationToken: string;
+
+  salt: string;
+
+ // createAt: Date;
+
+ // updateAt: Date;
+
 
   /*constructor(id: number, name: string, age: number, nota1: number, nota2: number) {
     this.id = id;

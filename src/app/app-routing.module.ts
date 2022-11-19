@@ -1,13 +1,13 @@
 
-import { NavComponent } from "./components/nav/nav.component";
-import { HomeComponent } from "./components/home/home.component";
-import { LoginComponent } from "./components/login/login.component";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AlunoUpdateComponent } from "./components/alunos/alunos-update/alunos-update.component";
-import { AlunosCreateComponent } from "./components/alunos/alunos-create/alunos-create.component";
-import { AlunoListComponent } from "./components/alunos/alunos-list/alunos-list.component";
-import { AlunoDeleteComponent } from "./components/alunos/alunos-delete/alunos-delete.component";
+import { HomeComponent } from "./components/home/home.component";
+import { LoginComponent } from "./components/login/login.component";
+import { NavComponent } from "./components/nav/nav.component";
+import { UserCreateComponent } from "./components/user/user-create/user-create.component";
+import { UserDeleteComponent } from "./components/user/user-delete/user-delete.component";
+import { UserListComponent } from "./components/user/user-list/user-list.component";
+import { UserUpdateComponent } from "./components/user/user-update/user-update.component";
 
 
 const routes: Routes = [
@@ -19,10 +19,10 @@ const routes: Routes = [
     children: [
       { path: "home", component: HomeComponent },
 
-      { path: "alunos", component: AlunoListComponent },
-      { path: "alunos/create", component: AlunosCreateComponent },
-      { path: "alunos/update/:id", component: AlunoUpdateComponent },
-      { path: "alunos/delete/:id", component: AlunoDeleteComponent },
+      { path: "user", component: UserListComponent },
+      { path: "user/create", component: UserCreateComponent },
+      { path: "user/update/:id", component: UserUpdateComponent },
+      { path: "user/delete/:id", component: UserDeleteComponent },
     ],
   },
 ];
