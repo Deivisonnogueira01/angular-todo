@@ -1,3 +1,7 @@
+import { TasksDeleteComponent } from './components/task/tasks-delete/tasks-delete.component';
+import { TaskUpdateComponent } from './components/task/tasks-update/tasks-update.component';
+import { TaskCreateComponent } from './components/task/tasks-create/task-create.component';
+import { TasksListComponent } from './components/task/tasks-list/tasks-list.component';
 
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
@@ -23,6 +27,11 @@ const routes: Routes = [
       { path: "user/create", component: UserCreateComponent },
       { path: "user/update/:id", component: UserUpdateComponent },
       { path: "user/delete/:id", component: UserDeleteComponent },
+
+      {path: "task", component: TasksListComponent},
+      {path: "task/create", component: TaskCreateComponent},
+      {path: "task/update/:id", component: TaskUpdateComponent},
+      {path: "task/delete/:id", component: TasksDeleteComponent}
     ],
   },
 ];

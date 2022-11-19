@@ -1,3 +1,6 @@
+import { TasksDeleteComponent } from './components/task/tasks-delete/tasks-delete.component';
+import { TaskUpdateComponent } from './components/task/tasks-update/tasks-update.component';
+import { TasksListComponent } from './components/task/tasks-list/tasks-list.component';
 import { TaskCreateComponent } from './components/task/tasks-create/task-create.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ToastrModule } from 'ngx-toastr';
+import {MatTabsModule} from '@angular/material/tabs';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
@@ -40,7 +45,11 @@ import { UserUpdateComponent } from './components/user/user-update/user-update.c
     UserCreateComponent,
     UserDeleteComponent,
     UserUpdateComponent,
-      
+    TasksListComponent,
+    TaskCreateComponent,
+    TaskUpdateComponent,
+    TasksDeleteComponent
+     
    
 
   ],
@@ -60,6 +69,9 @@ import { UserUpdateComponent } from './components/user/user-update/user-update.c
     MatDialogModule,
     MatPaginatorModule,
     MatInputModule,
+    MatTabsModule,
+    DragDropModule,
+    
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
