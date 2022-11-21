@@ -9,21 +9,6 @@ if (environment.production) {
   
 }
 
-
-//app.enableCors();
-
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-
-  /*insert
-  formulario para cadastrar a tarefa
-  no bd 
-
-  cdn / angular material
-
-   to do / done / 
-
-   3
-
-  */
